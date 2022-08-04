@@ -1,5 +1,5 @@
  class Result{
-    public int zabonacciNumber(int n){
+    public int zabonacciNumber(int n) throws Exception {
         int n1 = 1, n2 = 2, n3, i;
         System.out.print(n1 + " " + n2);
 
@@ -12,6 +12,9 @@
                 System.out.print(" " + n3);
             }
         }
+        if(n<2){
+            throw new Exception("The number of term at least two.");
+        }
 
         return n2-n1;
     }
@@ -22,12 +25,11 @@ public class zabonacciSeries {
         System.out.println("Args value " + args.length);
         try{
             int n = Integer.parseInt(args[0]);
-            Result Result = new Result();
 
+            Result Result = new Result();
             int result = Result.zabonacciNumber(n);
             System.out.println("\n\nThe Result : " + result);
 
-            throw new Exception("Provide an argument");
         }
         catch (Exception e){
             System.out.println(e);
